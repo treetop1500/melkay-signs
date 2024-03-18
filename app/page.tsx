@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react';
 import Image from "next/image";
+import Iframe from 'react-iframe'
 
 export default function Home() {
 
@@ -101,17 +102,17 @@ export default function Home() {
         description="Brick and concrete monument designed to reflect architecture of main building. Includes extruded, brushed metal lettering to match main building." />
 
 
-      <div className="sketchfab-embed-wrapper w-full max-w-5xl aspect-video mb-12"> 
-          <iframe 
-            className="w-full max-w-5xl aspect-video"
-            title="MelKay Monument" 
-            frameborder="0" 
-            allowfullscreen mozallowfullscreen="true" 
-            webkitallowfullscreen="true" 
-            allow="autoplay; fullscreen; xr-spatial-tracking" 
-            xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share 
-            src="https://sketchfab.com/models/448f0166105442b4a365b7b61ffa34ba/embed?autostart=1&ui_theme=dark">
-          </iframe> 
+      <div className="sketchfab-embed-wrapper w-full max-w-5xl aspect-video mb-12">
+
+      <Iframe url="https://sketchfab.com/models/448f0166105442b4a365b7b61ffa34ba/embed?autostart=1&ui_theme=dark"
+        className="w-full max-w-5xl aspect-video"
+        width="640px"
+        height="520px"
+        id=""
+        display="block"
+        allowFullScreen
+        position="relative"
+        allow="autoplay; fullscreen; xr-spatial-tracking" />
       </div>
 
     </>
