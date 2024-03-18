@@ -102,8 +102,6 @@ export default function Home() {
 
 
       <div className="sketchfab-embed-wrapper w-full max-w-5xl aspect-video mb-12"> 
-
-        <div class="sketchfab-embed-wrapper">
           <iframe 
             className="w-full max-w-5xl aspect-video"
             title="MelKay Monument" 
@@ -114,9 +112,6 @@ export default function Home() {
             xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share 
             src="https://sketchfab.com/models/448f0166105442b4a365b7b61ffa34ba/embed?autostart=1&ui_theme=dark">
           </iframe> 
-        </div>
-
-
       </div>
 
     </>
