@@ -51,7 +51,7 @@ export default function Home() {
 
   const Marker: React.FC<MarkerProps> = (props) => {
 
-    const markerClassName = `absolute -translate-x-[15px] -translate-y-[15px] h=[20px] w-[20px] lg:h=[30px] lg:w-[30px] origin-center ${props.className || ''}`;
+    const markerClassName = `absolute -translate-x-[15px] -translate-y-[15px] h=[20px] w-[20px] lg:h=[30px] lg:w-[30px] origin-center cursor-pointer hover:scale-110 transition-all ease-out ${props.className || ''}`;
 
     return (
       <Image
