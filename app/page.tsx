@@ -155,7 +155,7 @@ export default function Home() {
       <Detail image="/melkay-west-lot-southeast.jpg" 
         alt="Melkay Signage West Lot Southeast" 
         title="West Lot Southest Corner" 
-        description="Custom brick and concrete pillar with brushed metal icon. Possibly backlit." />
+        description="Corner Brick and concrete monument designed to reflect architecture of main building. Includes extruded, brushed metal lettering to match main building." />
     }
 
     {selectedMarker === 4 &&
@@ -172,7 +172,21 @@ export default function Home() {
       </div>
     }
 
-    {(selectedMarker === 5 || selectedMarker === 6 || selectedMarker === 7 || selectedMarker === 8) &&
+    {selectedMarker === 8 &&
+      <div className="sketchfab-embed-wrapper w-full max-w-5xl aspect-video mb-12">
+        <Iframe url="https://sketchfab.com/models/469a1e3e4e4647e49474d42d9d653b20/embed?autostart=1&ui_theme=dark"
+          className="w-full max-w-5xl aspect-video"
+          width="640px"
+          height="520px"
+          id=""
+          display="block"
+          allowFullScreen
+          position="relative"
+          allow="autoplay; fullscreen; xr-spatial-tracking" />
+      </div>
+    }
+
+    {(selectedMarker === 5 || selectedMarker === 6 || selectedMarker === 7) &&
       <div className="sketchfab-embed-wrapper w-full max-w-5xl aspect-video mb-12">
         <Iframe url="https://sketchfab.com/models/15e2c75cbc3245c59e55c2f4cc671ce9/embed?autostart=1&ui_theme=dark"
         className="w-full max-w-5xl aspect-video"
