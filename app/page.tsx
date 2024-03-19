@@ -3,6 +3,7 @@
 import React, { useState } from 'react';
 import Image from "next/image";
 import Iframe from 'react-iframe'
+import { Transition } from '@headlessui/react'
 
 export default function Home() {
 
@@ -17,6 +18,7 @@ export default function Home() {
     alt: string;
     title: string;
     description: string;
+    id: number
   }
 
   interface MarkerProps {
@@ -26,25 +28,37 @@ export default function Home() {
 
   const Detail: React.FC<DetailProps> = (props) => {
     return (
-      <div className="mb-8 lg:mb-12 flex lg:max-w-5xl lg:w-full lg:mb-0 text-left" id="main-building-south">
-        <div className="basis-1/2">
-          <Image
-            src={props.image}
-            alt={props.alt}
-            width={600}
-            height={600}
-            priority
-          />
+      <Transition
+        show={props.id === selectedMarker}
+        appear={true}
+        enter="transition-opacity duration-500"
+        enterFrom="opacity-0"
+        enterTo="opacity-100"
+        leave="transition-opacity duration-500"
+        leaveFrom="opacity-100"
+        leaveTo="opacity-0"
+      >
+
+        <div className="mb-8 lg:mb-12 flex lg:max-w-5xl lg:w-full lg:mb-0 text-left" id="main-building-south">
+          <div className="basis-1/2">
+            <Image
+              src={props.image}
+              alt={props.alt}
+              width={600}
+              height={600}
+              priority
+            />
+          </div>
+          <div className="basis-1/2 lg:pt-12 pl-6 pr-6 lg:pl-8">
+              <h2 className={`mb-3 text-xl font-semibold`}>
+              {props.title}
+            </h2>
+            <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
+              {props.description}
+            </p>
+          </div>
         </div>
-        <div className="basis-1/2 lg:pt-12 pl-6 pr-6 lg:pl-8">
-            <h2 className={`mb-3 text-xl font-semibold`}>
-            {props.title}
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            {props.description}
-          </p>
-        </div>
-      </div>
+      </Transition>
     )
   }
 
@@ -78,7 +92,6 @@ export default function Home() {
 
       <div className="z-10 max-w-5xl w-full items-center justify-center relative mb-12">
 
-
         <Marker className={`left-[38%] top-[35%]`} id={1}/>
         <Marker className={`left-[41%] top-[16%]`} id={2}/>
         <Marker className={`left-[43%] top-[52%]`} id={3}/>
@@ -96,67 +109,51 @@ export default function Home() {
         />
       </div>
 
-    {selectedMarker === 4 && 
-    <>
-      <Detail image="/melkay-west-lot-north-end.jpg" 
-        alt="Melkay Signage West Lot North" 
-        title="West Lot, North End" 
-        description="Brick and concrete monument designed to reflect architecture of main building. Includes extruded, brushed metal lettering to match main building." />
-
-
-
-
-
-
-
-    </>
-    }
-    {selectedMarker === 1 && 
-      <Detail image="/melkay-main-building-west.jpg" 
+      <Detail id={1}
+        image="/melkay-main-building-west.jpg" 
         alt="Melkay Signage Main Building West" 
         title="Main Building West Face" 
         description="Extruded brushed metal lettering offset from wall to allow shadow. Potentail for backlighting at night." />
-    }
-    {selectedMarker === 2 && 
-      <Detail image="/melkay-main-building-north.jpg" 
+
+      <Detail id={2}
+        image="/melkay-main-building-north.jpg" 
         alt="Melkay Signage Main Building North" 
         title="Main Building North Face" 
         description="Extruded brushed metal lettering offset from wall to allow shadow. Potentail for backlighting at night." />
-    }
-    {selectedMarker === 3 && 
-      <Detail image="/melkay-main-building-south.jpg" 
+      <Detail id={3}
+        image="/melkay-main-building-south.jpg" 
         alt="Melkay Signage Main Building South" 
         title="Main Building North Face" 
         description="Extruded brushed metal lettering offset from wall to allow shadow. Potentail for backlighting at night." />
-    }
 
-    {selectedMarker === 5 &&
-      <Detail image="/melkay-west-lot-northwest.jpg" 
+      <Detail  id={4}
+        image="/melkay-west-lot-north-end.jpg" 
+        alt="Melkay Signage West Lot North" 
+        title="West Lot, North End" 
+        description="Brick and concrete monument designed to reflect architecture of main building. Includes extruded, brushed metal lettering to match main building." />
+      <Detail id={5}
+        image="/melkay-west-lot-northwest.jpg" 
         alt="Melkay Signage West Lot Northwest" 
         title="West Lot Northwest Corner" 
         description="Custom brick and concrete pillar with brushed metal icon. Possibly backlit." />
-    }
 
-    {selectedMarker === 6 && 
-      <Detail image="/melkay-west-lot-west.jpg" 
+      <Detail id={6}
+        image="/melkay-west-lot-west.jpg" 
         alt="Melkay Signage West Lot West" 
         title="West Lot West Corner" 
         description="Custom brick and concrete pillar with brushed metal icon. Possibly backlit." />
-    }
 
-    {selectedMarker === 7 && 
-      <Detail image="/melkay-west-lot-southwest.jpg" 
+      <Detail id={7}
+        image="/melkay-west-lot-southwest.jpg" 
         alt="Melkay Signage West Lot Southwest" 
         title="West Lot Southwest Corner" 
         description="Custom brick and concrete pillar with brushed metal icon. Possibly backlit." />
-    }
 
-    {selectedMarker === 8 && 
-      <Detail image="/melkay-west-lot-southeast.jpg" 
+      <Detail id={8}
+        image="/melkay-west-lot-southeast.jpg" 
         alt="Melkay Signage West Lot Southeast" 
         title="West Lot Southest Corner" 
         description="Corner Brick and concrete monument designed to reflect architecture of main building. Includes extruded, brushed metal lettering to match main building." />
-    }
 
     {selectedMarker === 4 &&
       <div className="sketchfab-embed-wrapper w-full max-w-5xl aspect-video mb-12">
