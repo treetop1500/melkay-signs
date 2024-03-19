@@ -83,8 +83,10 @@ export default function Home() {
         <Marker className={`left-[41%] top-[16%]`} id={2}/>
         <Marker className={`left-[43%] top-[52%]`} id={3}/>
         <Marker className={`left-[29%] top-[13%]`} id={4}/>
-
-
+        <Marker className={`left-[18%] top-[12%]`} id={5}/>
+        <Marker className={`left-[10%] top-[51%]`} id={6}/>
+        <Marker className={`left-[14%] top-[86%]`} id={7}/>
+        <Marker className={`left-[30%] top-[86%]`} id={8}/>
         <Image
           src="/birdseye.jpg"
           alt="Melkay Property map"
@@ -102,18 +104,10 @@ export default function Home() {
         description="Brick and concrete monument designed to reflect architecture of main building. Includes extruded, brushed metal lettering to match main building." />
 
 
-      <div className="sketchfab-embed-wrapper w-full max-w-5xl aspect-video mb-12">
 
-      <Iframe url="https://sketchfab.com/models/448f0166105442b4a365b7b61ffa34ba/embed?autostart=1&ui_theme=dark"
-        className="w-full max-w-5xl aspect-video"
-        width="640px"
-        height="520px"
-        id=""
-        display="block"
-        allowFullScreen
-        position="relative"
-        allow="autoplay; fullscreen; xr-spatial-tracking" />
-      </div>
+
+
+
 
     </>
     }
@@ -136,12 +130,64 @@ export default function Home() {
         description="Extruded brushed metal lettering offset from wall to allow shadow. Potentail for backlighting at night." />
     }
 
+    {selectedMarker === 5 &&
+      <Detail image="/melkay-west-lot-northwest.jpg" 
+        alt="Melkay Signage West Lot Northwest" 
+        title="West Lot Northwest Corner" 
+        description="Custom brick and concrete pillar with brushed metal icon. Possibly backlit." />
+    }
+
+    {selectedMarker === 6 && 
+      <Detail image="/melkay-west-lot-west.jpg" 
+        alt="Melkay Signage West Lot West" 
+        title="West Lot West Corner" 
+        description="Custom brick and concrete pillar with brushed metal icon. Possibly backlit." />
+    }
+
+    {selectedMarker === 7 && 
+      <Detail image="/melkay-west-lot-southwest.jpg" 
+        alt="Melkay Signage West Lot Southwest" 
+        title="West Lot Southwest Corner" 
+        description="Custom brick and concrete pillar with brushed metal icon. Possibly backlit." />
+    }
+
+    {selectedMarker === 8 && 
+      <Detail image="/melkay-west-lot-southeast.jpg" 
+        alt="Melkay Signage West Lot Southeast" 
+        title="West Lot Southest Corner" 
+        description="Custom brick and concrete pillar with brushed metal icon. Possibly backlit." />
+    }
+
+    {selectedMarker === 4 &&
+      <div className="sketchfab-embed-wrapper w-full max-w-5xl aspect-video mb-12">
+        <Iframe url="https://sketchfab.com/models/448f0166105442b4a365b7b61ffa34ba/embed?autostart=1&ui_theme=dark"
+          className="w-full max-w-5xl aspect-video"
+          width="640px"
+          height="520px"
+          id=""
+          display="block"
+          allowFullScreen
+          position="relative"
+          allow="autoplay; fullscreen; xr-spatial-tracking" />
+      </div>
+    }
+
+    {(selectedMarker === 5 || selectedMarker === 6 || selectedMarker === 7 || selectedMarker === 8) &&
+      <div className="sketchfab-embed-wrapper w-full max-w-5xl aspect-video mb-12">
+        <Iframe url="https://sketchfab.com/models/15e2c75cbc3245c59e55c2f4cc671ce9/embed?autostart=1&ui_theme=dark"
+        className="w-full max-w-5xl aspect-video"
+        width="640px"
+        height="520px"
+        id=""
+        display="block"
+        allowFullScreen
+        position="relative"
+        allow="autoplay; fullscreen; xr-spatial-tracking" />
+      </div>
+    }
 
       <div className="w-full border-gray-700 border-t max-w-5xl">
-
         <p className={`text-[9px] text-center pt-8 font-light uppercase text-gray-400 tracking-[.25rem]`}>&copy; 2024 GRAY LOON MARKETING GROUP, ALL RIGHTS RESERVED</p>
-
-        
       </div>
 
 
