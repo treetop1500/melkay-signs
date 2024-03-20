@@ -113,18 +113,18 @@ export default function Home() {
         image="/melkay-main-building-west.jpg" 
         alt="Melkay Signage Main Building West" 
         title="Main Building West Face" 
-        description="Extruded brushed metal lettering offset from wall to allow shadow. Potentail for backlighting at night." />
+        description="Extruded brushed metal lettering offset from wall to allow shadow. Potential for backlighting at night." />
 
       <Detail id={2}
         image="/melkay-main-building-north.jpg" 
         alt="Melkay Signage Main Building North" 
         title="Main Building North Face" 
-        description="Extruded brushed metal lettering offset from wall to allow shadow. Potentail for backlighting at night." />
+        description="Extruded brushed metal lettering offset from wall to allow shadow. Potential for backlighting at night." />
       <Detail id={3}
         image="/melkay-main-building-south.jpg" 
         alt="Melkay Signage Main Building South" 
         title="Main Building North Face" 
-        description="Extruded brushed metal lettering offset from wall to allow shadow. Potentail for backlighting at night." />
+        description="Extruded brushed metal lettering offset from wall to allow shadow. Potential for backlighting at night." />
 
       <Detail  id={4}
         image="/melkay-west-lot-north-end.jpg" 
